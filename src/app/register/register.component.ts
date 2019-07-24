@@ -40,6 +40,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
       this.employeeArray = this.userDataService.getEmployees();
   }
   onSubmit() {
+    console.log(this.employeeForm);
     this.userDataService.add(this.employeeForm.value);
    this.employeeArray= this.userDataService.getEmployees();
   }

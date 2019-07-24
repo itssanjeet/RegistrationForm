@@ -19,6 +19,9 @@
                     id="name"
                     formControlName="name"
                     class="form-control">
+                    <span
+                    *ngIf="!employeeForm.get('name').valid && employeeForm.get('name').touched"
+                    class="help-block"  >Please enter a Valid Name!</span>
                 </div>
               </div>
             </div>
@@ -32,6 +35,9 @@
                       formControlName="email"
                       class="form-control"
                       #email>
+                      <span
+                        *ngIf="!employeeForm.get('email').valid && employeeForm.get('email').touched"
+                        class="help-block"  >Please enter a Valid Email!</span>
                   </div>
                 </div>
               </div>
@@ -45,6 +51,9 @@
                         formControlName="mobile"
                         class="form-control"
                         #mobile>
+                        <span
+                        *ngIf="!employeeForm.get('mobile').valid && employeeForm.get('mobile').touched"
+                          class="help-block"  >Please enter a Valid Mobile Number!</span>
                     </div>
                   </div>
                 </div>
@@ -97,7 +106,10 @@
               </div>
             </div>
           </div>
-          <button class="btn btn-success pull-right" type="submit">Submit</button>
+          <span
+           *ngIf="!employeeForm.valid && employeeForm.touched"
+            class="help-block pull-left" >Please enter Valid data!</span>
+          <button class="btn btn-success pull-right" [disabled]="!employeeForm.valid" type="submit">Submit</button>
        </div>
     </div>
   </form>
