@@ -1,0 +1,31 @@
+<a
+  style="cursor: pointer;"
+  class="list-group-item clearfix">
+  <div class="pull-left">
+    <h4 class="list-group-item-heading">Name: {{ employee.name }}</h4>
+    <p class="list-group-item-text">Email: {{ employee.email }}</p>
+    <p class="list-group-item-text">Mobile: {{ employee.mobile }}</p>
+  </div>
+  <div class="pull-right">
+    <button
+        type="button"
+        class="btn btn-danger"
+        (click)="onDeleteEmployee()">X</button>
+  </div>
+    <br><br><br>
+    <h3>Employee Details: </h3>
+    <div class="row-table">
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Joining Year</th>
+            <th>Leaving Year</th>
+            </tr>
+            <tr *ngFor="let emp of employee.employeeDetails" class="r">
+                <td>{{emp.name}}</td>
+                <td>{{emp.joinYear}}</td>
+                <td>{{emp.leaveYear}}</td>
+            </tr>
+        </table>
+    </div>
+</a>
